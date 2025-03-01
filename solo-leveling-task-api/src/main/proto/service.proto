@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.sleepkqq.sololeveling.task.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.sleepkqq.sololeveling.task.grpc";
+option java_outer_classname = "ExampleProto";
+
+service ExampleService {
+  rpc GetExample (ExampleRequest) returns (ExampleResponse);
+}
+
+message ExampleRequest {
+  string requestId = 1;
+}
+
+message ExampleResponse {
+  string responseId = 1;
+  string message = 2;
+}

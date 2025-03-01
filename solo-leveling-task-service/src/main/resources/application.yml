@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: solo-leveling-task
+  elasticsearch:
+    uris: http://${SERVER_HOST}:9200
+  kafka:
+    bootstrap-servers: ${SERVER_HOST}:9092
