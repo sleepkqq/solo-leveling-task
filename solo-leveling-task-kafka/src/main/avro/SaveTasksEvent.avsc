@@ -32,7 +32,35 @@
               "type": {
                 "type": "enum",
                 "name": "TaskRarity",
-                "symbols": ["COMMON", "UNCOMMON", "RARE", "EPIC", "LEGENDARY"]
+                "symbols": [
+                  "COMMON",
+                  "UNCOMMON",
+                  "RARE",
+                  "EPIC",
+                  "LEGENDARY"
+                ]
+              }
+            },
+            {
+              "name": "topics",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "enum",
+                  "name": "TaskTopic",
+                  "symbols": [
+                    "PHYSICAL_ACTIVITY",
+                    "MENTAL_HEALTH",
+                    "EDUCATION",
+                    "CREATIVITY",
+                    "SOCIAL_SKILLS",
+                    "HEALTHY_EATING",
+                    "PRODUCTIVITY",
+                    "EXPERIMENTS",
+                    "ECOLOGY",
+                    "TEAMWORK"
+                  ]
+                }
               }
             },
             {

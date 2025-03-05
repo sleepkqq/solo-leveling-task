@@ -5,6 +5,7 @@ import com.sleepkqq.sololeveling.task.model.Intelligence;
 import com.sleepkqq.sololeveling.task.model.Strength;
 import com.sleepkqq.sololeveling.task.model.Task;
 import com.sleepkqq.sololeveling.task.model.TaskRarity;
+import com.sleepkqq.sololeveling.task.model.TaskTopic;
 import com.sleepkqq.sololeveling.task.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -24,6 +25,7 @@ public class TaskKafkaConsumer {
             t.getDescription(),
             t.getExperience(),
             TaskRarity.valueOf(t.getRarity().name()),
+            TaskTopic.fromKafka(t.getTopics()),
             Agility.valueOf(t.getAgility()),
             Strength.valueOf(t.getStrength()),
             Intelligence.valueOf(t.getIntelligence())

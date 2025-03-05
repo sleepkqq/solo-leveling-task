@@ -2,9 +2,9 @@ package com.sleepkqq.sololeveling.task.service;
 
 import com.sleepkqq.sololeveling.task.model.Task;
 import com.sleepkqq.sololeveling.task.repository.TaskRepository;
+import java.util.Collection;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import one.util.streamex.StreamEx;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,8 +25,8 @@ public class TaskService {
     return taskRepository.findByExperienceBetween(minExperience, maxExperience);
   }
 
-  public List<Task> findAll() {
-    return StreamEx.of(taskRepository.findAll().spliterator()).toList();
+  public List<Task> find(Collection<String> ids) {
+    return taskRepository.findByIdIn(ids);
   }
 
   public void deleteTask(String id) {
