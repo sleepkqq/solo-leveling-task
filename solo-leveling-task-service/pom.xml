@@ -29,8 +29,12 @@
       <artifactId>grpc-spring-boot-starter</artifactId>
       <version>${grpc-spring-boot-starter.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-    <!-- tasks -->
+    <!-- solo leveling -->
     <dependency>
       <groupId>com.sleepkqq</groupId>
       <artifactId>solo-leveling-task-api</artifactId>
@@ -54,7 +58,17 @@
     <dependency>
       <groupId>one.util</groupId>
       <artifactId>streamex</artifactId>
-      <version>0.8.3</version>
+      <version>${streamex.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.confluent</groupId>
+      <artifactId>kafka-avro-serializer</artifactId>
+      <version>${confluent-kafka.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>${avro.version}</version>
     </dependency>
 
     <!-- tests -->
@@ -70,43 +84,20 @@
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>confluent</id>
+      <url>https://packages.confluent.io/maven/</url>
+    </repository>
+  </repositories>
+
   <build>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
-
-      <!-- Protobuf Maven Plugin -->
-      <plugin>
-        <groupId>org.xolstice.maven.plugins</groupId>
-        <artifactId>protobuf-maven-plugin</artifactId>
-        <version>0.6.1</version>
-        <configuration>
-          <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
-          <pluginId>grpc-java</pluginId>
-          <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
-          <protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>
-          <outputDirectory>${project.build.directory}/generated-sources/protobuf/java</outputDirectory>
-          <clearOutputDirectory>false</clearOutputDirectory>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>compile-custom</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
-    <extensions>
-      <extension>
-        <groupId>kr.motd.maven</groupId>
-        <artifactId>os-maven-plugin</artifactId>
-        <version>1.7.1</version>
-      </extension>
-    </extensions>
   </build>
 
 </project>

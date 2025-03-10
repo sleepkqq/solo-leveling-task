@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   application:
     name: solo-leveling-task
@@ -5,3 +7,5 @@ spring:
     uris: http://${SERVER_HOST}:9200
   kafka:
     bootstrap-servers: ${SERVER_HOST}:9092
+    properties:
+      schema.registry.url: http://${SERVER_HOST}:8081

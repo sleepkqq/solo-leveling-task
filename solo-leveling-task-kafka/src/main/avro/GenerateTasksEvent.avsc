@@ -8,8 +8,35 @@
       "type": "string"
     },
     {
-      "name": "count",
-      "type": "int"
+      "name": "userId",
+      "type": "long"
+    },
+    {
+      "name": "inputs",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "GenerateTask",
+          "fields": [
+            {
+              "name": "rarity",
+              "type": {
+                "type": "com.sleepkqq.sololeveling.task.kafka.TaskRarity"
+              }
+            },
+            {
+              "name": "topics",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "com.sleepkqq.sololeveling.task.kafka.TaskTopic"
+                }
+              }
+            }
+          ]
+        }
+      }
     }
   ]
 }

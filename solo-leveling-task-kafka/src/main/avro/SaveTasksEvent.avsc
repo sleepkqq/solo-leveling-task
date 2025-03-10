@@ -8,6 +8,10 @@
       "type": "string"
     },
     {
+      "name": "userId",
+      "type": "long"
+    },
+    {
       "name": "tasks",
       "type": {
         "type": "array",
@@ -30,15 +34,7 @@
             {
               "name": "rarity",
               "type": {
-                "type": "enum",
-                "name": "TaskRarity",
-                "symbols": [
-                  "COMMON",
-                  "UNCOMMON",
-                  "RARE",
-                  "EPIC",
-                  "LEGENDARY"
-                ]
+                "type": "com.sleepkqq.sololeveling.task.kafka.TaskRarity"
               }
             },
             {
@@ -46,20 +42,7 @@
               "type": {
                 "type": "array",
                 "items": {
-                  "type": "enum",
-                  "name": "TaskTopic",
-                  "symbols": [
-                    "PHYSICAL_ACTIVITY",
-                    "MENTAL_HEALTH",
-                    "EDUCATION",
-                    "CREATIVITY",
-                    "SOCIAL_SKILLS",
-                    "HEALTHY_EATING",
-                    "PRODUCTIVITY",
-                    "EXPERIMENTS",
-                    "ECOLOGY",
-                    "TEAMWORK"
-                  ]
+                  "type": "com.sleepkqq.sololeveling.task.kafka.TaskTopic"
                 }
               }
             },
