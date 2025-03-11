@@ -22,11 +22,11 @@ public enum TaskTopic {
     return StreamEx.of(topics).map(t -> TaskTopic.valueOf(t.name())).toSet();
   }
 
-  public static Set<com.sleepkqq.sololeveling.task.grpc.TaskTopic> toGrpc(
+  public static Set<com.sleepkqq.sololeveling.task.api.TaskTopic> toGrpc(
       Set<TaskTopic> topics
   ) {
     return StreamEx.of(topics)
-        .map(t -> com.sleepkqq.sololeveling.task.grpc.TaskTopic.valueOf(t.name()))
+        .map(t -> com.sleepkqq.sololeveling.task.api.TaskTopic.valueOf(t.name()))
         .toSet();
   }
 }

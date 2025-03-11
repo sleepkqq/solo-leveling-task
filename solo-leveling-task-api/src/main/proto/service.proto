@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package com.sleepkqq.sololeveling.task.grpc;
+package com.sleepkqq.sololeveling.task.api;
 
 option java_multiple_files = true;
-option java_package = "com.sleepkqq.sololeveling.task.grpc";
+option java_package = "com.sleepkqq.sololeveling.task.api";
 option java_outer_classname = "TaskProto";
 
 service TaskService {

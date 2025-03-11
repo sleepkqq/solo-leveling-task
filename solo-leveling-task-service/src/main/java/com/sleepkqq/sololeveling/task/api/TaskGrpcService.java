@@ -1,6 +1,6 @@
-package com.sleepkqq.sololeveling.task.grpc;
+package com.sleepkqq.sololeveling.task.api;
 
-import com.sleepkqq.sololeveling.task.grpc.TaskServiceGrpc.TaskServiceImplBase;
+import com.sleepkqq.sololeveling.task.api.TaskServiceGrpc.TaskServiceImplBase;
 import com.sleepkqq.sololeveling.task.model.TaskTopic;
 import com.sleepkqq.sololeveling.task.service.TaskService;
 import io.grpc.stub.StreamObserver;
