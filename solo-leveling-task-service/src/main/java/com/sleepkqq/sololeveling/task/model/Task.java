@@ -6,47 +6,52 @@ import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.UUID;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Getter
+@Setter
+@NoArgsConstructor
 @Document(indexName = "tasks")
 public class Task {
 
   @Id
-  private final String id;
+  private String id;
 
   @Field(type = FieldType.Text)
-  private final String title;
+  private String title;
 
   @Field(type = FieldType.Text)
-  private final String description;
+  private String description;
 
   @Field(type = FieldType.Integer)
-  private final int experience;
+  private int experience;
 
   @Enumerated(EnumType.STRING)
   @Field(type = FieldType.Keyword)
-  private final TaskRarity rarity;
+  private TaskRarity rarity;
 
-  private final Set<TaskTopic> topics;
-
-  @Field(type = FieldType.Integer)
-  private final int agility;
+  private Set<TaskTopic> topics;
 
   @Field(type = FieldType.Integer)
-  private final int strength;
+  private int agility;
 
   @Field(type = FieldType.Integer)
-  private final int intelligence;
+  private int strength;
 
-  @Field(type = FieldType.Date)
-  private final LocalDateTime createdAt;
+  @Field(type = FieldType.Integer)
+  private int intelligence;
 
-  @Field(type = FieldType.Date)
-  private final LocalDateTime updatedAt;
+  @Field(type = FieldType.Date, format = DateFormat.date_hour_minute_second)
+  private LocalDateTime createdAt;
+
+  @Field(type = FieldType.Date, format = DateFormat.date_hour_minute_second)
+  private LocalDateTime updatedAt;
 
   public Task(
       String title,
