@@ -10,7 +10,7 @@ import one.util.streamex.StreamEx;
 
 @GrpcService
 @RequiredArgsConstructor
-public class TaskGrpcService extends TaskServiceImplBase {
+public class TaskApi extends TaskServiceImplBase {
 
   private final TaskService taskService;
 

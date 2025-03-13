@@ -24,6 +24,8 @@ public class KafkaConfig {
   private static final String SCHEMA_REGISTRY_URL_CONFIG = "schema.registry.url";
   private static final String SPECIFIC_AVRO_READER_CONFIG = "specific.avro.reader";
 
+  private static final String TASK_GROUP_ID = "task-group";
+
   @Value("${spring.kafka.bootstrap-servers}")
   private String bootstrapServers;
 
@@ -44,14 +46,7 @@ public class KafkaConfig {
 
   @Bean
   public ConsumerFactory<String, SaveTasksEvent> consumerFactorySaveTasksEvent() {
-    return new DefaultKafkaConsumerFactory<>(Map.of(
-        ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers,
-        ConsumerConfig.GROUP_ID_CONFIG, "task-group",
-        ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
-        ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class,
-        SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl,
-        SPECIFIC_AVRO_READER_CONFIG, Boolean.TRUE.toString()
-    ));
+    return createConsumerFactory(TASK_GROUP_ID);
   }
 
   @Bean
@@ -69,6 +64,17 @@ public class KafkaConfig {
         ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class,
         ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class,
         SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl
+    ));
+  }
+
+  public <V> ConsumerFactory<String, V> createConsumerFactory(String groupId) {
+    return new DefaultKafkaConsumerFactory<>(Map.of(
+        ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers,
+        ConsumerConfig.GROUP_ID_CONFIG, groupId,
+        ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
+        ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class,
+        SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl,
+        SPECIFIC_AVRO_READER_CONFIG, Boolean.TRUE.toString()
     ));
   }
 }

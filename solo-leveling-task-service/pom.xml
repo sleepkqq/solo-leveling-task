@@ -60,6 +60,8 @@
       <artifactId>streamex</artifactId>
       <version>${streamex.version}</version>
     </dependency>
+
+    <!-- avro -->
     <dependency>
       <groupId>io.confluent</groupId>
       <artifactId>kafka-avro-serializer</artifactId>
