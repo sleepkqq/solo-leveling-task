@@ -1,9 +1,11 @@
 package com.sleepkqq.sololeveling.task.model;
 
+import com.sleepkqq.sololeveling.avro.task.TaskRarity;
+import com.sleepkqq.sololeveling.avro.task.TaskTopic;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.Collection;
 import java.util.UUID;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +23,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 public class Task {
 
   @Id
-  private String id;
+  private UUID id;
 
   @Field(type = FieldType.Text)
   private String title;
@@ -36,7 +38,7 @@ public class Task {
   @Field(type = FieldType.Keyword)
   private TaskRarity rarity;
 
-  private Set<TaskTopic> topics;
+  private Collection<TaskTopic> topics;
 
   @Field(type = FieldType.Integer)
   private int agility;
@@ -58,12 +60,12 @@ public class Task {
       String description,
       int experience,
       TaskRarity rarity,
-      Set<TaskTopic> topics,
+      Collection<TaskTopic> topics,
       Agility agility,
       Strength strength,
       Intelligence intelligence
   ) {
-    this.id = UUID.randomUUID().toString();
+    this.id = UUID.randomUUID();
     this.title = title;
     this.description = description;
     this.experience = experience;

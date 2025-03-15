@@ -1,7 +1,7 @@
 package com.sleepkqq.sololeveling.task.controller;
 
-import com.sleepkqq.sololeveling.task.kafka.GenerateTask;
-import com.sleepkqq.sololeveling.task.kafka.GenerateTasksEvent;
+import com.sleepkqq.sololeveling.avro.task.GenerateTask;
+import com.sleepkqq.sololeveling.avro.task.GenerateTasksEvent;
 import com.sleepkqq.sololeveling.task.kafka.GenerateTasksProducer;
 import com.sleepkqq.sololeveling.task.service.CalculateTaskRarityService;
 import com.sleepkqq.sololeveling.task.service.DefineTaskTopicsService;

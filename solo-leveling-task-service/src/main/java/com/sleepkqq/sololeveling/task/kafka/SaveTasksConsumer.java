@@ -1,11 +1,10 @@
 package com.sleepkqq.sololeveling.task.kafka;
 
+import com.sleepkqq.sololeveling.avro.task.SaveTasksEvent;
 import com.sleepkqq.sololeveling.task.model.Agility;
 import com.sleepkqq.sololeveling.task.model.Intelligence;
 import com.sleepkqq.sololeveling.task.model.Strength;
 import com.sleepkqq.sololeveling.task.model.Task;
-import com.sleepkqq.sololeveling.task.model.TaskRarity;
-import com.sleepkqq.sololeveling.task.model.TaskTopic;
 import com.sleepkqq.sololeveling.task.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +27,8 @@ public class SaveTasksConsumer {
             t.getTitle(),
             t.getDescription(),
             t.getExperience(),
-            TaskRarity.valueOf(t.getRarity().name()),
-            TaskTopic.fromKafka(t.getTopics()),
+            t.getRarity(),
+            t.getTopics(),
             Agility.valueOf(t.getAgility()),
             Strength.valueOf(t.getStrength()),
             Intelligence.valueOf(t.getIntelligence())

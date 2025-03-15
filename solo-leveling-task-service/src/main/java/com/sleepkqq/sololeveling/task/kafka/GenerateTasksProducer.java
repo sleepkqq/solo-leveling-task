@@ -1,5 +1,6 @@
 package com.sleepkqq.sololeveling.task.kafka;
 
+import com.sleepkqq.sololeveling.avro.task.GenerateTasksEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;

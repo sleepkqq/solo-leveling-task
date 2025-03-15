@@ -16,9 +16,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>solo-leveling-task-api</module>
     <module>solo-leveling-task-service</module>
-    <module>solo-leveling-task-kafka</module>
   </modules>
 
   <properties>
@@ -26,11 +24,10 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <grpc-spring-boot-starter.version>3.1.0.RELEASE</grpc-spring-boot-starter.version>
-    <protobuf.version>4.29.3</protobuf.version>
-    <grpc.version>1.70.0</grpc.version>
     <confluent-kafka.version>7.9.0</confluent-kafka.version>
     <avro.version>1.12.0</avro.version>
     <streamex.version>0.8.3</streamex.version>
+    <map-struct.version>1.6.3</map-struct.version>
   </properties>
 
   <build>

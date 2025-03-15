@@ -1,12 +1,12 @@
 package com.sleepkqq.sololeveling.task.service;
 
-import static com.sleepkqq.sololeveling.task.kafka.TaskRarity.COMMON;
-import static com.sleepkqq.sololeveling.task.kafka.TaskRarity.EPIC;
-import static com.sleepkqq.sololeveling.task.kafka.TaskRarity.LEGENDARY;
-import static com.sleepkqq.sololeveling.task.kafka.TaskRarity.RARE;
-import static com.sleepkqq.sololeveling.task.kafka.TaskRarity.UNCOMMON;
+import static com.sleepkqq.sololeveling.avro.task.TaskRarity.COMMON;
+import static com.sleepkqq.sololeveling.avro.task.TaskRarity.EPIC;
+import static com.sleepkqq.sololeveling.avro.task.TaskRarity.LEGENDARY;
+import static com.sleepkqq.sololeveling.avro.task.TaskRarity.RARE;
+import static com.sleepkqq.sololeveling.avro.task.TaskRarity.UNCOMMON;
 
-import com.sleepkqq.sololeveling.task.kafka.TaskRarity;
+import com.sleepkqq.sololeveling.avro.task.TaskRarity;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;

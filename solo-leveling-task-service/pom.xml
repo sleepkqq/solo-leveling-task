@@ -37,12 +37,12 @@
     <!-- solo leveling -->
     <dependency>
       <groupId>com.sleepkqq</groupId>
-      <artifactId>solo-leveling-task-api</artifactId>
+      <artifactId>solo-leveling-proto</artifactId>
       <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.sleepkqq</groupId>
-      <artifactId>solo-leveling-task-kafka</artifactId>
+      <artifactId>solo-leveling-avro</artifactId>
       <version>1.0.0</version>
     </dependency>
 
@@ -59,6 +59,17 @@
       <groupId>one.util</groupId>
       <artifactId>streamex</artifactId>
       <version>${streamex.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${map-struct.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct-processor</artifactId>
+      <version>${map-struct.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- avro -->

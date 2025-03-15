@@ -4,6 +4,7 @@ import com.sleepkqq.sololeveling.task.model.Task;
 import com.sleepkqq.sololeveling.task.repository.TaskRepository;
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class TaskService {
     return taskRepository.findByExperienceBetween(minExperience, maxExperience);
   }
 
-  public List<Task> find(Collection<String> ids) {
+  public List<Task> find(Collection<UUID> ids) {
     return taskRepository.findByIdIn(ids);
   }
 

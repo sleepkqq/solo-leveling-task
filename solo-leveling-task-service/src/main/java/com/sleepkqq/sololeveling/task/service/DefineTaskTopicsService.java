@@ -1,6 +1,6 @@
 package com.sleepkqq.sololeveling.task.service;
 
-import com.sleepkqq.sololeveling.task.kafka.TaskTopic;
+import com.sleepkqq.sololeveling.avro.task.TaskTopic;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
